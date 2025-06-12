@@ -1,4 +1,5 @@
 namespace Odyssey.MusicMatcher;
+using SpotifyWeb;
 
 [GraphQLDescription("A curated collection of tracks designed for a specific activity or mood.")]
 public class Playlist
@@ -19,5 +20,12 @@ public class Playlist
   {
     Id = id;
     Name = name;
+  }
+
+  public Playlist(PlaylistSimplified obj)
+  {
+    Id = obj.Id;
+    Name = obj.Name;
+    Description = obj.Description;
   }
 }
